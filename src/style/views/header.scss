@@ -1,0 +1,6 @@
+.wrapper-header{
+  background-color: $white;
+  position:relative;
+  padding:0 20px;
+  @include base(box-shadow, 0 0 5px rgba(0, 0, 0, 0.3));
+}

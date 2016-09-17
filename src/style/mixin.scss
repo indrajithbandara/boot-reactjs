@@ -1,0 +1,97 @@
+/*
+ * mixin
+ * author:  ttghost@126.com
+ */
+
+// media query
+@mixin max-min-screen($max, $min) {
+  @media (max-width: $max) and (min-width: $min) {
+     @content;
+  }
+}
+@mixin max-screen($max) {
+  @media (max-width: $max) {
+     @content;
+  }
+}
+@mixin base($attr, $value){
+  -webkit-#{$attr}: $value;
+     -moz-#{$attr}: $value;
+      -ms-#{$attr}: $value;
+       -o-#{$attr}: $value;
+          #{$attr}: $value;
+}
+@mixin radius-target($target:top-left, $value:3px) {
+  @include base(border-#{$target}-radius, $value);
+}
+// animation
+@mixin transition($time) {
+  @include base(transition, $time ease all);
+}
+@mixin radius($r){
+  @include base(border-radius, $r);
+}
+@mixin box-sizing($value:border-box){
+  @include base(box-sizing, $value);
+}
+@mixin box-shadow($x, $y, $blur, $color){
+  @include base(box-shadow, $x $y $blur $color);
+}
+@mixin clearfix(){
+  &:after{
+    content:"";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+  }
+}
+@mixin angle($whitch-border:bottom, $width:10px, $color:#fff, $position:top){
+  display:block;
+  content:"";
+  width:0;
+  height:0;
+  margin:0;
+  padding:0;
+  border-color:transparent;
+  border-style:solid;
+  position:absolute;
+  border-width:$width;
+  border-#{$whitch-border}: $width solid $color;
+  #{$position}:-$width*2;
+}
+@mixin angle-top($width:10px, $color:#fff){
+  @include angle(bottom, $width, $color, top);
+  left:50%;
+  margin-left:-$width;
+}
+@mixin angle-right($width:10px, $color:#fff){
+  @include angle(left, $width, $color, right);
+  top:50%;
+  margin-top:-$width;
+}
+@mixin angle-bottom($width:10px, $color:#fff){
+  @include angle(top, $width, $color, bottom);
+  left:50%;
+  margin-left:-$width;
+}
+@mixin angle-left($width:10px, $color:#fff){
+  @include angle(right, $width, $color, left);
+  top:50%;
+  margin-top:-$width;
+}
+
+@mixin doc-container-border() {
+  border: solid 1px $lightBorder;
+  border-top-style: none;
+}
+
+@mixin height($height) {
+  height: $height;
+  line-height: $height;
+}
+@mixin overdot(){
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}

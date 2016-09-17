@@ -1,0 +1,47 @@
+html,body{
+  background-color: $bgHighLightGray;
+  margin:0;
+}
+body{
+  color:$fontColor;
+  -webkit-font-smoothing:antialiased;
+}
+a, a:visited{
+  color:$blue;
+}
+a:hover{
+  color:darken($blue, 20%);
+}
+// color
+.gray{
+  color:$gray;
+}
+.light-gray{
+  color:$lightGray;
+}
+
+.white{
+  color:$white;
+}
+.bg-white{
+  background-color:$white;
+}
+
+.bg-blue{
+  background-color:$blue;
+}
+.bg-light-blue{
+  background-color:$lightBlue;
+}
+
+.border-bottom-gray{
+  border-bottom:1px solid $grayBorder
+}
+
+.overdot{
+  @include overdot();
+}
+
+.word-break{
+  word-break:break-all;
+}
