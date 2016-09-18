@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     app: './src/entry/index',
     babel: 'babel-polyfill',
-    'reactlibs': ['react', 'react-redux', 'react-router', 'redux'], 
+    reactlibs: ['react', 'react-redux', 'react-router', 'redux']
   },
   output: {
     path: path.join(__dirname, 'dist'),
