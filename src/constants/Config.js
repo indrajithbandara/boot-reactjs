@@ -1,6 +1,6 @@
 
 const envUrl = {
-  production: 'http://localhost',
+  production: '',
   stage: 'http://localhost',
   development: ''
 };
